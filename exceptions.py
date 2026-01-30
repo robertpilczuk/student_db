@@ -2,7 +2,7 @@ class StudentDbError(Exception):
     pass
 
 
-class ValidatorError(StudentDbError):
+class ValidationError(StudentDbError):
     pass
 
 
