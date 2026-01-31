@@ -1,4 +1,11 @@
 from models import Student
+from validators import (
+    validate_name,
+    validate_address,
+    validate_index_number,
+    validate_pesel_format,
+    validate_gender,
+)
 
 
 def print_menu() -> None:
@@ -16,12 +23,12 @@ def print_menu() -> None:
 
 
 def read_student() -> Student:
-    first_name = input("Imię: ").strip()
-    last_name = input("Nazwisko: ").strip()
-    address = input("Adres: ").strip()
-    index_number = input("Numer indeksu: ").strip()
-    pesel = input("PESEL (11 cyfr): ").strip()
-    gender = input("Płeć (M/K)").strip().upper()
+    first_name = validate_name(input("Imię: "), "Imię")
+    last_name = validate_name(input("Nazwisko: "), "Nazwisko")
+    address = validate_address(input("Adres: "))
+    index_number = validate_index_number(input("Numer indeksu: "))
+    pesel = validate_pesel_format(input("PESEL (11 cyfr): "))
+    gender = validate_gender(input("Płeć (M/K): "))
 
     return Student(
         first_name=first_name,
