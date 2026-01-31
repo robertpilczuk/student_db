@@ -5,7 +5,7 @@ from models import Student
 from exceptions import StorageError
 
 
-DEFAULT_PATH = Path("data/student.json")
+DEFAULT_PATH = Path("data/students.json")
 
 
 def load_students(path: Path=DEFAULT_PATH) -> List[Student]:

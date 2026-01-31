@@ -20,7 +20,9 @@ def main(db_path: Path = DEFAULT_PATH) -> None:
 
         try:
             if choice == "1":
-                student = read_student()
+                from ui import read_student_with_pesel_validation
+
+                student = read_student_with_pesel_validation()
                 repo.add(student)
                 print("Dodano studenta.")
 
@@ -52,22 +54,15 @@ def main(db_path: Path = DEFAULT_PATH) -> None:
 
             elif choice == "8":
                 idx = input("Podaj numer indeksu studenta do aktualizacji: ").strip()
-                print("Zostaw puste jeśli bez zmian.")
-                first_name = input("Nowe imię: ").strip()
-                last_name = input("Nowe nazwisko: ").strip()
-                address = input("Nowy adres: ").strip()
-                pesel = input("Nowy PESEL: ").strip()
-                gender = input("Nowa płeć (M/K): ").strip().upper()
 
-                updates = {}
-                if first_name: updates["first_name"] = first_name
-                if last_name: updates["last_name"] = last_name
-                if address: updates["address"] = address
-                if pesel: updates["pesel"] = pesel
-                if gender: updates["gender"] = gender
+                from ui import read_updates
+                updates = read_updates()
 
-                repo.update(idx, **updates)
-                print("Zaktualizowano dane studenta.")
+                if not updates:
+                    print("Brak zmian do zapisania.")
+                else:
+                    repo.update(idx, **updates)
+                    print("Zaktualizowano dane studenta.")
 
             elif choice == "9":
                 save_students(repo.all(), db_path)
