@@ -1,0 +1,42 @@
+[
+  {
+    "first_name": "Jan",
+    "last_name": "Kowalski",
+    "address": "Lublin, ul. Testowa 1",
+    "index_number": "S-0001",
+    "pesel": "99010501230",
+    "gender": "M"
+  },
+  {
+    "first_name": "Anna",
+    "last_name": "Nowak",
+    "address": "Warszawa, ul. Kwiatowa 10",
+    "index_number": "S-0002",
+    "pesel": "99010501247",
+    "gender": "K"
+  },
+  {
+    "first_name": "Katarzyna",
+    "last_name": "Zielińska",
+    "address": "Kraków, ul. Długa 7",
+    "index_number": "S-0003",
+    "pesel": "03323100082",
+    "gender": "K"
+  },
+  {
+    "first_name": "Marek",
+    "last_name": "Wiśniewski",
+    "address": "Gdańsk, ul. Morska 3",
+    "index_number": "S-0004",
+    "pesel": "88822901112",
+    "gender": "M"
+  },
+  {
+    "first_name": "Piotr",
+    "last_name": "Adamski",
+    "address": "Poznań, ul. Słoneczna 12",
+    "index_number": "S-0005",
+    "pesel": "99010501328",
+    "gender": "M"
+  }
+]
