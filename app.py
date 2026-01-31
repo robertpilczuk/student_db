@@ -19,7 +19,7 @@ def main(db_path: Path = DEFAULT_PATH) -> None:
         choice = input("Wybierz opcję: ").strip()
 
         try:
-            if choice == "":
+            if choice == "1":
                 student = read_student()
                 repo.add(student)
                 print("Dodano studenta.")
